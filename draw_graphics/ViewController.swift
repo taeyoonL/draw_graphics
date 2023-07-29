@@ -51,13 +51,13 @@ class ViewController: UIViewController {
     @IBAction func circle(_ sender: UIButton) {
         UIGraphicsBeginImageContext(image_view.frame.size)
         let context = UIGraphicsGetCurrentContext()!
-        context.setLineWidth(3.0)
+        context.setLineWidth(2.0)
         context.setStrokeColor(UIColor.gray.cgColor)
-        context.addEllipse(in: CGRect(x: 70, y: 50, width: 200, height: 200))
+        context.addEllipse(in: CGRect(x: 70, y: 50, width: 200, height: 100))
         
         context.setLineWidth(5.0)
         context.setStrokeColor(UIColor.black.cgColor)
-        context.addEllipse(in: CGRect(x: 70, y: 200, width: 200, height: 100))
+        context.addEllipse(in: CGRect(x: 70, y: 200, width: 200, height: 200))
         context.strokePath()
         image_view.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -74,8 +74,8 @@ class ViewController: UIViewController {
         context.addLine(to: CGPoint(x: 250, y: 200))
         
         context.move(to: CGPoint(x: 100, y: 250))
-        context.addArc(tangent1End: CGPoint(x: 400, y: 250), tangent2End: CGPoint(x: 400, y: 300), radius: CGFloat(40))
-        context.addLine(to: CGPoint(x: 400, y: 300))
+        context.addArc(tangent1End: CGPoint(x: 270, y: 250), tangent2End: CGPoint(x: 100, y: 400), radius: CGFloat(20))
+        context.addLine(to: CGPoint(x: 100, y: 400))
         
         context.strokePath()
         image_view.image = UIGraphicsGetImageFromCurrentImageContext()
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
     @IBAction func fill(_ sender: UIButton) {
         UIGraphicsBeginImageContext(image_view.frame.size)
         let context = UIGraphicsGetCurrentContext()!
-        context.setLineWidth(3.0)
+        context.setLineWidth(1.0)
         context.setStrokeColor(UIColor.red.cgColor)
         context.setFillColor(UIColor.blue.cgColor)
         
@@ -94,15 +94,15 @@ class ViewController: UIViewController {
         context.fill(rectangle)
         context.strokePath()
         
-        context.setLineWidth(2.0)
+        context.setLineWidth(1.0)
         context.setStrokeColor(UIColor.black.cgColor)
         context.setFillColor(UIColor.green.cgColor)
-        let rectangle_1 = CGRect(x: 70, y: 200, width: 200, height: 200)
+        let rectangle_1 = CGRect(x: 70, y: 200, width: 200, height: 100)
         context.addEllipse(in: rectangle_1)
         context.fillEllipse(in: rectangle_1)
         context.strokePath()
         
-        context.setLineWidth(2.4)
+        context.setLineWidth(1.0)
         context.setStrokeColor(UIColor.blue.cgColor)
         context.setFillColor(UIColor.black.cgColor)
         context.move(to: CGPoint(x: 170, y: 350))
