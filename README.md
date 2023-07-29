@@ -11,3 +11,4 @@
 
 # 실행 화면
 
+![ezgif com-video-to-gif (15)](https://github.com/taeyoonL/draw_graphics/assets/132141316/77d4a452-5a68-41e0-ac14-f414d1eeb494)
